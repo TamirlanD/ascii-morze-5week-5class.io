@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ASCII и Морзе + Домашнее задание</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Open Sans', Arial, sans-serif;
+      background-color: #f9f6f0;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 15px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin: 20px 0;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    .info-block {
+      background-color: #484237;
+      color: white;
+      padding: 16px;
+      border-radius: 0;
+      text-align: left;
+      margin: 20px 0;
+    }
+    .info-block h4 {
+      margin: 0 0 12px 0;
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+    .info-block ol {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 0.98rem;
+      opacity: 0.95;
+    }
+    .info-block li {
+      margin-bottom: 12px;
+    }
+
+    /* Общий контейнер для шифров */
+    .cipher-container {
+      background-color: #eee8dd;
+      padding: 6px 10px;
+      border-radius: 3px;
+      display: inline-block;
+      margin-top: 6px;
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: #333;
+    }
+
+    /* Морзе: каждая буква — отдельный блок внутри строки */
+    .morse-letters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      justify-content: flex-start;
+    }
+    .morse-letter {
+      min-width: 30px;
+      text-align: center;
+      padding: 2px 6px;
+      background: white;
+      border: 1px solid #d0c8b8;
+      border-radius: 2px;
+      font-size: 0.92rem;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+    h2 {
+      text-align: center;
+      color: #2c3e50;
+      margin: 20px 0 12px;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+    .compact-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+    }
+    .compact-grid div {
+      text-align: center;
+      padding: 8px 4px;
+      background: #eee8dd;
+      border: 1px solid #d8d0c4;
+      font-size: 0.9rem;
+      border-radius: 3px;
+    }
+    .compact-grid div strong {
+      color: #2c3e50;
+      display: block;
+      margin-bottom: 1px;
+      font-size: 0.95rem;
+    }
+
+    /* Адаптация для мобильных */
+    @media (max-width: 600px) {
+      .compact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      .info-block h4 {
+        font-size: 1.2rem;
+      }
+      .info-block ol {
+        font-size: 0.92rem;
+      }
+      .compact-grid div {
+        font-size: 0.88rem;
+        padding: 8px 6px;
+      }
+      .morse-letter {
+        min-width: 28px;
+        padding: 2px 5px;
+        font-size: 0.9rem;
+      }
+      .cipher-container {
+        font-size: 0.9rem;
+        padding: 5px 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>ASCII и Морзе</h1>
+
+    <div class="info-block">
+      <h4>Домашнее задание</h4>
+      <ol>
+        <li>
+          <strong>Расшифруй сообщение в ASCII:</strong><br>
+          <span class="cipher-container">204 206 203 206 196 197 214</span>
+        </li>
+        <li>
+          <strong>Расшифруй сообщение в азбуке Морзе:</strong><br>
+          <div class="cipher-container">
+            <div class="morse-letters">
+              <div class="morse-letter">··−</div>
+              <div class="morse-letter">−−</div>
+              <div class="morse-letter">−·</div>
+              <div class="morse-letter">··</div>
+              <div class="morse-letter">−·−·</div>
+              <div class="morse-letter">·−</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <strong>Закодируй своё имя:</strong><br>
+          - с помощью таблицы ASCII;<br>
+          - с помощью азбуки Морзе.
+        </li>
+      </ol>
+    </div>
+
+    <!-- ASCII таблица -->
+    <div class="section">
+      <h2>ASCII-коды</h2>
+      <div class="compact-grid">
+        <div><strong>А</strong>192</div>
+        <div><strong>Б</strong>193</div>
+        <div><strong>В</strong>194</div>
+        <div><strong>Г</strong>195</div>
+        <div><strong>Д</strong>196</div>
+        <div><strong>Е</strong>197</div>
+        <div><strong>Ж</strong>198</div>
+        <div><strong>З</strong>199</div>
+        <div><strong>И</strong>200</div>
+        <div><strong>Й</strong>201</div>
+        <div><strong>К</strong>202</div>
+        <div><strong>Л</strong>203</div>
+        <div><strong>М</strong>204</div>
+        <div><strong>Н</strong>205</div>
+        <div><strong>О</strong>206</div>
+        <div><strong>П</strong>207</div>
+        <div><strong>Р</strong>208</div>
+        <div><strong>С</strong>209</div>
+        <div><strong>Т</strong>210</div>
+        <div><strong>У</strong>211</div>
+        <div><strong>Ф</strong>212</div>
+        <div><strong>Х</strong>213</div>
+        <div><strong>Ц</strong>214</div>
+        <div><strong>Ч</strong>215</div>
+        <div><strong>Ш</strong>216</div>
+        <div><strong>Щ</strong>217</div>
+        <div><strong>Ъ</strong>218</div>
+        <div><strong>Ы</strong>219</div>
+        <div><strong>Ь</strong>220</div>
+        <div><strong>Э</strong>221</div>
+        <div><strong>Ю</strong>222</div>
+        <div><strong>Я</strong>223</div>
+      </div>
+    </div>
+
+    <!-- Морзе (буквы + цифры) -->
+    <div class="section">
+      <h2>Азбука Морзе</h2>
+      <div class="compact-grid">
+        <!-- Буквы -->
+        <div><strong>А</strong>· −</div>
+        <div><strong>Б</strong>− · · ·</div>
+        <div><strong>В</strong>· − −</div>
+        <div><strong>Г</strong>− − ·</div>
+        <div><strong>Д</strong>− · ·</div>
+        <div><strong>Е</strong>·</div>
+        <div><strong>Ж</strong>· · · −</div>
+        <div><strong>З</strong>− − · ·</div>
+        <div><strong>И</strong>· ·</div>
+        <div><strong>Й</strong>· − − −</div>
+        <div><strong>К</strong>− · −</div>
+        <div><strong>Л</strong>· − · ·</div>
+        <div><strong>М</strong>− −</div>
+        <div><strong>Н</strong>− ·</div>
+        <div><strong>О</strong>− − −</div>
+        <div><strong>П</strong>· − − ·</div>
+        <div><strong>Р</strong>· − ·</div>
+        <div><strong>С</strong>· · ·</div>
+        <div><strong>Т</strong>−</div>
+        <div><strong>У</strong>· · −</div>
+        <div><strong>Ф</strong>· · − ·</div>
+        <div><strong>Х</strong>· · · ·</div>
+        <div><strong>Ц</strong>− · − ·</div>
+        <div><strong>Ч</strong>− − − ·</div>
+        <div><strong>Ш</strong>− − − −</div>
+        <div><strong>Щ</strong>− − · −</div>
+        <div><strong>Ъ</strong>· − − − ·</div>
+        <div><strong>Ы</strong>− · − −</div>
+        <div><strong>Ь</strong>− · · −</div>
+        <div><strong>Э</strong>· · − · ·</div>
+        <div><strong>Ю</strong>· · − −</div>
+        <div><strong>Я</strong>· − · −</div>
+        <!-- Цифры -->
+        <div><strong>0</strong>− − − − −</div>
+        <div><strong>1</strong>· − − − −</div>
+        <div><strong>2</strong>· · − − −</div>
+        <div><strong>3</strong>· · · − −</div>
+        <div><strong>4</strong>· · · · −</div>
+        <div><strong>5</strong>· · · · ·</div>
+        <div><strong>6</strong>− · · · ·</div>
+        <div><strong>7</strong>− − · · ·</div>
+        <div><strong>8</strong>− − − · ·</div>
+        <div><strong>9</strong>− − − − ·</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
